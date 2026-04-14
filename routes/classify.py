@@ -6,7 +6,7 @@ from utils.helperMethods import compute_confidence, get_timestamp
 
 router = APIRouter()
 
-@router.get("/classify")
+@router.get("/api/classify")
 async def classify(name: str = Query(None)):
     if not name or name.strip() == "":
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail={"status": "error", "message": "Missing or empty name parameter"})
